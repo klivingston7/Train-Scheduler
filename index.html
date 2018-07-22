@@ -6,19 +6,16 @@
     <meta charset="UTF-8" meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Link Personal CSS File
-    <link rel="stylesheet" href="/assets/css/style.css"> -->
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Firebase JavaScript Link -->
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-    <!-- Link Moment JS -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <!-- Link Personal CSS File -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="padding: 20px 10px; margin-bottom: 10px;">
         <div class="row d-flex flex-lg-row flex-md-row flex-xs-column">
             <h1 class="col-sm-12 text-center">
                 Train Scheduler
@@ -26,12 +23,14 @@
             <h2 class="col-sm-12 text-center">
                 A Comprehensive Schedule of Trains
             </h2>
+            <h3 class="col-sm-12 text-center display-clock">
+            </h3>
         </div>
     </div>
 
-    <div class="container">
-        <h2 style="padding: 20px 0 0 20px">Current Employees</h2>
-        <table class="table">
+    <div class="container cont1">
+        <h2 style="padding: 20px 0 10px 20px">Current Trains</h2>
+        <table class="table" style="text-align:  center;">
             <thead>
                 <tr>
                     <th scope="col">Train Name</th>
@@ -47,37 +46,38 @@
         </table>
     </div>
 
+    <br>
     <!-- "Train Form" -->
-    <div class="container">
+    <div class="container cont2">
         <div class="col-lg-12" style="padding: 0">
             <div class="card card-default">
                 <div class="card-heading">
-                    <h2 class="card-title" style="padding: 20px 0 0 20px">
+                    <h2 class="card-title" style="padding: 20px 0 0 20px; margin: 0">
                         <span class="fa fa-list-alt"></span>
                         Add Train
                     </h2>
                     <div class="card-body">
                         <form class="col-sm-12" style="padding: 0" action="action_page.php">
                             <div class="form-group">
-                                <label class="control-label col-sm-6" style="padding: 0" id="name" for="trainName">Train Name</label>
+                                <label class="control-label col-sm-6" style="padding: 0" id="name" for="name-input">Train Name</label>
                                 <div class="form-text">
                                     <input type="txt" style="width: 100%" id="name-input" name="trainname">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" style="padding: 0" id="destination" for="destinationName">Destination</label>
+                                <label class="control-label col-sm-6" style="padding: 0" id="destination" for="destination-input">Destination</label>
                                 <div class="form-text">
                                     <input type="txt" style="width: 100%" id="destination-input" name="employeerole">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" style="padding: 0" id="first" for="firstTime">First Train Time</label>
+                                <label class="control-label col-sm-6" style="padding: 0" id="first" for="firstTime-input">First Train Time</label>
                                 <div class="form-text">
-                                    <input type="txt" style="width: 100%" id="firstTime-input" name="firsttimeinput" placeholder="  HH:MM - Military Time">
+                                    <input type="txt" style="width: 100%" id="tTime-input" name="firsttimeinput" placeholder="  HH:MM - Military Time">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" style="padding: 0" id="frequency" for="frequencyMin">Frequency (min)</label>
+                                <label class="control-label col-sm-6" style="padding: 0" id="frequency" for="frequency-input">Frequency (min)</label>
                                 <div class="form-text">
                                     <input type="txt" style="width: 100%" id="frequency-input" name="frequencyinput">
                                 </div>
@@ -95,10 +95,18 @@
         </div>
     </div>
 
+    <footer class="fixed-bottom">
+        <div class="container footer mx-auto d-block">
+            <div>Kitt Livingston | Copyright ©</div>
+        </div>
+    </footer>
 
 </body>
-
+<!-- LINK TO FIREBASE GOES HERE -->
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<!-- Link Moment JS -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <!-- Link Personal JS File -->
-<script src="assets/js/main.js"></script>
+<script src="./assets/js/main.js"></script>
 
 </html>

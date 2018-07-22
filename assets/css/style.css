@@ -1,0 +1,82 @@
+body {
+    /* background: #CDCFC5 */
+    background: rgb(158, 175, 180);
+    margin-bottom: 60px;
+}
+
+.jumbotron {
+    background-color: rgb(216, 218, 212) !important;
+    color: rgb(102, 119, 124) !important;
+    border-bottom: 4px solid rgb(196, 89, 94) !important;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h2.col-sm-12.text-center {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.cont1 {
+    color: rgba(12, 12, 12, 0.74);
+}
+
+.cont2 {
+    color: rgba(12, 12, 12, 0.74);
+}
+
+table {
+    /* border: 2px solid #A23036 !important; */
+}
+
+.card-heading {
+    background: rgb(216, 218, 212) !important;
+    border: 3px !important;
+    border-color: #A23036 !important;
+    padding: 0 !important;
+}
+
+input {
+    background: rgb(239, 240, 236) !important;
+}
+
+th {
+    font-size: 15px;
+    padding: 12px 15px !important; 
+}
+
+td {
+    font-size: 14px;
+    padding: 12px 15px !important;
+}
+
+input#add-train {
+    background: rgb(196, 89, 94) !important;
+    color: rgb(239, 240, 236) !important;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(158, 175, 180);
+    border-top: 2px solid rgb(196, 89, 94);
+    padding-top: 15px;
+    color: rgb(239, 240, 236);
+    font-size: 10px;
+}
+
+.footer {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
