@@ -14,10 +14,9 @@ var config = {
 };
 
 firebase.initializeApp(config);
+
 // Variables to reference the database.
 var database = firebase.database();
-
-
 var tName = "";
 var tDestination = "";
 var tTime = "";
@@ -27,18 +26,18 @@ var tMoment = moment();
 
 console.log(moment().format("LL"));
 
-// Capture Button Click
+// capture button click
 $("#add-train").on("click", function (event) {
     event.preventDefault();
 
-    // Grabbed values from text-boxes
+    // grab values from text-boxes
     tName = $("#name-input").val().trim();
     tDestination = $("#destination-input").val().trim();
     tTime = moment($("#tTime-input").val().trim(), "HH:mm").format("X");
     tFrequency = $("#frequency-input").val().trim();
 
     tMoment = moment().format('X');
-    // Code for "Pushing values in the database"
+    // code to push values into the database
     database.ref().child('train').push({
         tName: tName,
         tDestination: tDestination,
@@ -48,7 +47,7 @@ $("#add-train").on("click", function (event) {
     });
 });
 
-// Update minutes away by triggering change in firebase children
+// function to update train time's minutes away by triggering a change in firebase children
 function updateTime() {
     database.ref().child('train').once('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
@@ -62,10 +61,11 @@ function updateTime() {
 
 setInterval(updateTime, 30000);
 
-// Reference Firebase when page loads and train added
+// reference firebase when page loads and add train to firebase
 database.ref().child('train').on('value', function (snapshot) {
     $('tbody').empty();
 
+    // do math and find out the minutes until the next train
     snapshot.forEach(function (childSnapshot) {
         console.log(childSnapshot.val());
         var tTrain = childSnapshot.val();
@@ -85,7 +85,7 @@ database.ref().child('train').on('value', function (snapshot) {
         }
 
         var tClass = childSnapshot.key;
-
+        // create a table row and table data elements then append them to the table body
         $('tbody').append(
             "<tr class=" + tClass + ">" +
             "<td>" + tTrain.tName + "</td>" +
